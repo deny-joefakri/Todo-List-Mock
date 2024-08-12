@@ -1,3 +1,4 @@
+import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         home: PostListPage(),
+        navigatorObservers: [ChuckerFlutter.navigatorObserver],
       ),
     );
   }

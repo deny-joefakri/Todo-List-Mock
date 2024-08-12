@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:chucker_flutter/chucker_flutter.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -26,16 +27,19 @@ class HttpService {
       baseUrl: baseUrlString,
     ),
   )
-    ..interceptors.add(
-      PrettyDioLogger(
-        requestHeader: true,
-        requestBody: true,
-        responseBody: true,
-        responseHeader: false,
-        error: true,
-        compact: true,
-        maxWidth: 120,
-        logPrint: (object) => log(object.toString()),
-      ),
+    ..interceptors.addAll(
+        [
+          PrettyDioLogger(
+            requestHeader: true,
+            requestBody: true,
+            responseBody: true,
+            responseHeader: false,
+            error: true,
+            compact: true,
+            maxWidth: 120,
+            logPrint: (object) => log(object.toString()),
+          ),
+          ChuckerDioInterceptor(),
+        ]
     );
 }

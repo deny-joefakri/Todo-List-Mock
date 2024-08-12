@@ -38,7 +38,7 @@ The project uses the following dependencies:
 - **`equatable`** (`^2.0.5`): A helper library that makes it easier to compare objects in Dart, particularly useful for state management in Flutter.
 - **`dartz`** (`^0.10.1`): A functional programming library for Dart, used in the project for handling operations like error handling, option types, etc.
 - **`get_it`** (`^7.6.4`): A service locator for dependency injection, used to manage dependencies and make the code more modular and testable.
-
+- **`chucker_flutter`**  (`^1.0.1`): An HTTP inspector for Flutter, integrated with Dio to log and visualize HTTP requests and responses directly within your app.
 ---
 
 ### How to Run the Project
